@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace valheim_orbital_camera
 {
-    [BepInPlugin("de.torbilicious", "valheim-orbital-camera", "1.1.0")]
+    [BepInPlugin("de.torbilicious", "valheim-orbital-camera", "1.1.1")]
     [BepInProcess("valheim.exe")]
     public class OrbitalCameraMod : BaseUnityPlugin
     {
@@ -16,7 +16,7 @@ namespace valheim_orbital_camera
 
         void Awake()
         {
-            newMaxCameraDistance = Config.Bind("valheim-orbital-camera", "newMaxCameraDistance", 16.0f, "Max Camera Distance To Patch");
+            newMaxCameraDistance = Config.Bind("valheim-orbital-camera", "newMaxCameraDistance", 90.0f, "Max Camera Distance To Patch");
             newMaxCameraDistance.SettingChanged += (sender, args) => patchPending = true;
             
             newFov = Config.Bind("valheim-orbital-camera", "newFov", 65.0f, "New FOV");
